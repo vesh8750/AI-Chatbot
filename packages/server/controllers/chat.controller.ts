@@ -15,9 +15,9 @@ const sendMessage = async (req: Request, res: Response) => {
     return res.status(400).json({ error: formattedError });
   }
   try {
-    const { prompt, conversationalId } = req.body;
+    const { prompt, conversationId } = req.body;
 
-    const response = await chatService.sendMessage(prompt, conversationalId);
+    const response = await chatService.sendMessage(prompt, conversationId);
 
     res.json({ message: response.message });
   } catch (error) {

@@ -5,18 +5,18 @@ const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-const sendMessage = async (prompt: string, conversationalId: string) => {
+const sendMessage = async (prompt: string, conversationId: string) => {
   const response = await client.responses.create({
     model: "gpt-4o-mini",
     input: prompt,
     temperature: 0.2,
     max_output_tokens: 100,
     previous_response_id:
-      coversationRepository.getLastResponseId(conversationalId),
+      coversationRepository.getLastResponseId(conversationId),
   });
 
   coversationRepository.setLastResponseId(
-    conversationalId,
+    conversationId,
     String(response.id)
   );
 
