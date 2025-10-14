@@ -10,12 +10,14 @@
   "devDependencies": {
     "@types/bun": "latest",
     "@types/express": "^5.0.3",
-    "@types/morgan": "^1.9.10"
+    "@types/morgan": "^1.9.10",
+    "prisma": "^6.17.1"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
+    "@prisma/client": "^6.17.1",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "morgan": "^1.10.1",

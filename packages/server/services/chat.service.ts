@@ -1,11 +1,11 @@
 import fs from "fs";
 import path from "path";
 import OpenAI from "openai";
-import template from "../llm/prompts/chatbot.txt";
+import template from "../prompts/chatbot.txt";
 import { coversationRepository } from "../repositories/conversation.repository";
 
 const parkInfo = fs.readFileSync(
-  path.join(__dirname, "..", "llm", "prompts", "WonderWorld.md"),
+  path.join(__dirname, "..", "prompts", "WonderWorld.md"),
   "utf-8"
 );
 const instructions = template.replace("{{parkInfo}}", parkInfo);
